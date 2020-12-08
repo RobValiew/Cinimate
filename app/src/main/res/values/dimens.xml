@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_mini">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">48dp</dimen>
+    <dimen name="padding_mini">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">48dp</dimen>
+
+    <dimen name="grid_item_spacing">3dp</dimen>
+    <dimen name="tall_toolbar_height">256dp</dimen>
+    <dimen name="cast_card_view_width">120dp</dimen>
+    <dimen name="cast_card_view_corner_radius">4dp</dimen>
+    <dimen name="trailer_card_view_width">180dp</dimen>
+    <dimen name="trailer_card_view_height">120dp</dimen>
+    <dimen name="trailer_card_view_corner_radius">4dp</dimen>
+    <dimen name="trailer_play_icon_width">52dp</dimen>
+    <dimen name="trailer_play_icon_height">52dp</dimen>
+    <dimen name="movie_item_text_title_height">52dp</dimen>
+    <dimen name="details_movie_poster_width">0dp</dimen>
+    <dimen name="details_movie_poster_height">200dp</dimen>
+    <dimen name="card_view_corner_radius">4dp</dimen>
+    <dimen name="movie_poster_card_elevation">8dp</dimen>
+    <dimen name="movie_poster_card_corner_radius">4dp</dimen>
+    <dimen name="details_view_divider_top">24dp</dimen>
+    <dimen name="review_ic_account_size">48dp</dimen>
+</resources>

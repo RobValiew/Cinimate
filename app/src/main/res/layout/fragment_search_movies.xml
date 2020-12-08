@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.profitmobile.valiev.cinemate.data.network.Resource" />
+        <import type="com.profitmobile.valiev.cinemate.data.network.Status" />
+        <import type="com.profitmobile.valiev.cinemate.ui.movielist.search.SearchMoviesViewModel"/>
+
+        <variable name="resource" type="Resource" />
+        <variable name="searchViewModel" type="SearchMoviesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.movielist.search.SearchMoviesFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/grid_item_spacing"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/grid_item_spacing"
+                android:inputType="textNoSuggestions"
+                android:imeOptions="actionSearch"
+                android:background="@android:color/transparent"
+                android:hint="@string/search_hint"
+                android:importantForAutofill="no"
+                tools:text="google" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_search_movie_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="@dimen/grid_item_spacing"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <include
+            layout="@layout/network_state"
+            android:id="@+id/network_state"
+            app:resource="@{resource}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Cinimate</string>
+    <string name="discover">Discover</string>
+    <string name="favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="category_popular">Popular</string>
+    <string name="category_top_rated">Top Rated</string>
+    <string name="category_now_playing">Now Playing</string>
+    <string name="category_upcoming">Upcoming</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="movie_poster">Movie poster</string>
+    <string name="detail_error_message">Movie data not available</string>
+    <string name="movie_backdrop">Movie backdrop image</string>
+    <string name="label_overview">Overview</string>
+    <string name="vote_count">%s votes</string>
+    <string name="cast_member_profile_image">Cast member profile image</string>
+    <string name="cast">Cast</string>
+    <string name="trailer_thumbnail">Trailer thumbnail</string>
+    <string name="play_icon">Movie trailer play icon</string>
+    <string name="trailers">Trailers</string>
+    <string name="author_image_placeholder">Author profile pic placeholder</string>
+    <string name="reviews">Reviews</string>
+    <string name="action_add_to_favorites">Add to Favorites</string>
+    <string name="action_remove_from_favorites">Remove from Favorites</string>
+    <string name="movie_added_to_favorites">Movie added to favorites </string>
+    <string name="movie_removed_from_favorites">Movie removed from favorites </string>
+    <string name="no_favorites">You have no favorite movies yet</string>
+    <string name="search_hint">Search movies</string>
+    <string name="empty_search_result">No results for <b>%s</b></string>
+</resources>

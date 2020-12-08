@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tmdbMoviesFragment">
+
+    <fragment
+        android:id="@+id/tmdbMoviesFragment"
+        android:name="com.profitmobile.valiev.cinemate.ui.movielist.discover.FilteredMoviesFragment"
+        android:label="TmdbMoviesFragment"
+        tools:layout="@layout/fragment_filtered_movies"/>
+
+    <fragment
+        android:id="@+id/favoriteMoviesFragment"
+        android:name="com.profitmobile.valiev.cinemate.ui.movielist.favorites.FavoriteMoviesFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_favorite_movies"/>
+
+    <fragment
+        android:id="@+id/searchMoviesFragment"
+        android:name="com.profitmobile.valiev.cinemate.ui.movielist.search.SearchMoviesFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search_movies"/>
+</navigation>

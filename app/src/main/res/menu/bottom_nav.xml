@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tmdbMoviesFragment"
+        android:title="@string/discover"
+        android:icon="@drawable/ic_movie_filter_black_24dp" />
+
+    <item
+        android:id="@+id/searchMoviesFragment"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_for_black_24dp" />
+
+    <item
+        android:id="@+id/favoriteMoviesFragment"
+        android:title="@string/favorites"
+        android:icon="@drawable/ic_favorite_black_24dp" />
+</menu>

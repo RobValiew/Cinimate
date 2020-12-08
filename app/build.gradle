@@ -1,0 +1,139 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.profitmobile.valiev.cinemate"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes.each {
+        it.buildConfigField 'String', 'TMDB_API_KEY', TMDB_API_KEY
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
+
+    // Core
+    implementation "androidx.core:core:$version_androidX_core"
+    implementation "androidx.core:core-ktx:$version_androidX_core"
+
+    // Support libs
+    implementation "androidx.appcompat:appcompat:$version_app_compat"
+    implementation "androidx.legacy:legacy-support-v4:$version_androidX_legacy_support"
+    implementation "androidx.annotation:annotation:$version_androidX_annotations"
+    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
+    implementation "androidx.cardview:cardview:$version_cardview"
+    implementation "com.google.android.material:material:$version_material"
+
+    // Fragment KTX
+    implementation "androidx.fragment:fragment-ktx:$version_fragment_ktx"
+
+    // Palette
+    implementation "androidx.palette:palette:$version_palette"
+    implementation "androidx.palette:palette-ktx:$version_palette"
+
+    // Room for Databases
+    implementation "androidx.room:room-runtime:$version_room"
+    implementation "androidx.room:room-ktx:$version_room"
+    kapt "androidx.room:room-compiler:$version_room"
+
+    // LiveData, ViewModel, Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$version_arch_lifecycle"
+    kapt "androidx.lifecycle:lifecycle-common-java8:$version_arch_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_arch_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$version_arch_lifecycle"
+
+    // Navigation
+    implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
+
+    // Paging Library
+    implementation "androidx.paging:paging-runtime:$version_paging"
+    implementation "androidx.paging:paging-runtime-ktx:$version_paging"
+
+    // Moshi for parsing the JSON format
+    implementation "com.squareup.moshi:moshi:$version_moshi"
+    implementation "com.squareup.moshi:moshi-kotlin:$version_moshi"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$version_moshi"
+
+    // Retrofit for networking
+    implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
+    implementation "com.squareup.retrofit2:converter-moshi:$version_retrofit"
+
+    // OkHttp for network logging
+    implementation "com.squareup.okhttp3:logging-interceptor:$version_okhttp_logging"
+
+    // Glide for image loading and caching
+    implementation "com.github.bumptech.glide:glide:$version_glide"
+    kapt "com.github.bumptech.glide:compiler:$version_glide"
+
+    // Timber for logging
+    implementation "com.jakewharton.timber:timber:$version_timber"
+
+    // Dagger for dependency injection
+    implementation "com.google.dagger:dagger:$version_dagger"
+    implementation "com.google.dagger:dagger-android:$version_dagger"
+    implementation "com.google.dagger:dagger-android-support:$version_dagger"
+    kapt "com.google.dagger:dagger-android-processor:$version_dagger"
+    kapt "com.google.dagger:dagger-compiler:$version_dagger"
+
+    // Dependencies for local unit tests
+    testImplementation "junit:junit:$version_junit"
+    testImplementation "org.hamcrest:hamcrest-all:$version_hamcrest"
+    testImplementation "org.robolectric:robolectric:$version_robolectric"
+    testImplementation "androidx.arch.core:core-testing:$version_arch_testing"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$version_mock_web_server"
+    testImplementation "org.mockito:mockito-core:$version_mockito"
+
+    // Dependencies for Android instrumented unit tests
+    androidTestImplementation "junit:junit:$version_junit"
+    androidTestImplementation "androidx.arch.core:core-testing:$version_arch_testing"
+    androidTestImplementation "org.mockito:mockito-core:$version_mockito"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$version_dex_maker"
+
+    // Testing code should not be included in the main code.
+    // Once https://issuetracker.google.com/128612536 is fixed this can be fixed.
+    implementation "androidx.test:core:$version_androidX_test_core"
+    debugImplementation "androidx.fragment:fragment-testing:$version_fragment"
+
+    // AndroidX Test - JVM testing, the Core library and the Assertions
+    testImplementation "androidx.test:core:$version_androidX_test_core"
+    testImplementation "androidx.test.ext:junit:$version_androidX_test_ext_kotlin_runner"
+
+    // AndroidX Test - Instrumented testing
+    androidTestImplementation "androidx.test:core:$version_androidX_test_core"
+    androidTestImplementation "androidx.test.ext:junit:$version_androidX_test_ext_kotlin_runner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$version_espresso"
+}

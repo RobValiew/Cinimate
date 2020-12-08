@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="favoritesViewModel"
+            type="com.profitmobile.valiev.cinemate.ui.movielist.favorites.FavoriteMoviesViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_favorites_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/grid_item_spacing"
+            android:clipToPadding="false"
+            android:scrollbars="none"
+            app:favoriteMovies="@{favoritesViewModel.favorites}"
+            app:visibleGone="@{favoritesViewModel.favorites != null}"/>
+
+        <!-- Empty state layout -->
+        <TextView
+            android:id="@+id/favorite_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="@dimen/margin_normal"
+            android:text="@string/no_favorites"
+            app:visibleGone="@{favoritesViewModel.favorites == null || favoritesViewModel.favorites.empty}"/>
+
+    </FrameLayout>
+</layout>
