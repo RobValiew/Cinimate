@@ -1,6 +1,7 @@
 package com.profitmobile.valiev.cinemate.di
 
-import com.profitmobile.valiev.cinemate.BuildConfig
+import androidx.core.os.BuildCompat
+import androidx.databinding.library.baseAdapters.BuildConfig
 import com.profitmobile.valiev.cinemate.data.network.TmdbApiService
 import com.profitmobile.valiev.cinemate.utils.LiveDataCallAdapterFactory
 import com.profitmobile.valiev.cinemate.utils.TMDB_BASE_URL
@@ -32,7 +33,7 @@ class RestModule {
             val initialRequest = chain.request()
 
             val url = initialRequest.url.newBuilder()
-                .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
+                .addQueryParameter("api_key", com.profitmobile.valiev.cinemate.BuildConfig.TMDB_API_KEY)
                 .build()
 
             val newRequest = initialRequest.newBuilder()
